@@ -2,15 +2,23 @@
 
 // **Enunciado:**
 
-// A função abaixo tenta retornar uma saudação personalizada para o usuário. O nome do usuário pode ser fornecido como parâmetro. Se o nome não for fornecido ou for `null` ou `undefined`, a saudação deve ser feita com "Visitante".
+// A função abaixo tenta retornar uma saudação personalizada para o usuário. 
+// O nome do usuário pode ser fornecido como parâmetro. Se o nome não for 
+// fornecido ou for `null` ou `undefined`, a saudação deve ser feita com "Visitante".
 
-// Além disso, a saudação só deve ser exibida se o usuário estiver logado (`isLogged` for `true`). Se não estiver logado, a função não deve retornar nada.
+// Além disso, a saudação só deve ser exibida se o usuário estiver logado 
+// (`isLogged` for `true`). Se não estiver logado, a função não deve retornar nada.
 
-// A função tem erros e comportamentos inesperados. Encontre e corrija os problemas usando **short-circuit evaluation** (avaliação de curto-circuito com `&&` ou `||`) e **nullish coalescing (`??`)**.
+// A função tem erros e comportamentos inesperados. Encontre e corrija os problemas 
+// usando **short-circuit evaluation** (avaliação de curto-circuito com `&&` ou `||`) 
+// e **nullish coalescing (`??`)**.
 
 function saudacao(nome, isLogged) {
-  nome = nome || "Visitante";
-  return isLogged || "Olá, " + nome + "!";
+  nome = nome ?? "Visitante";
+  if (isLogged) {
+    return "Olá, " + nome + "!";
+  } 
+  return isLogged;
 }
 
 // Testando a função
